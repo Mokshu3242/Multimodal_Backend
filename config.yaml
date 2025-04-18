@@ -1,0 +1,7 @@
+embeddings_path: "all-MiniLM-L6-v2"
+chat_history_path: "./chat_sessions/"
+
+llm_model: "@cf/meta/llama-3.1-8b-instruct-fast"
+Image_model: "@cf/meta/llama-3.2-11b-vision-instruct"
+
+whisper_model: "@cf/openai/whisper-large-v3-turbo"

@@ -1,0 +1,146 @@
+# MultiGPT - AI Assistant Project
+
+## Overview
+
+MultiGPT is a comprehensive AI assistant application that provides:
+- Text-based chat with AI
+- Document processing (PDF, Word, Excel, Text)
+- Image analysis and description
+- Voice interactions (speech-to-text and text-to-speech)
+- Multi-language support (English, Hindi, Marathi)
+- Data visualization capabilities
+
+This README provides setup instructions for both the backend (FastAPI) and frontend (React) components.
+
+## Prerequisites
+
+- Python 3.9+
+- MongoDB
+- Cloudflare account (for AI services)
+- ElevenLabs account (for text-to-speech)
+
+
+## Key Features and Usage
+
+### 1. Authentication
+
+**Registration:**
+- Navigate to `/register`
+- Enter name, email, and password
+- You'll receive an OTP via email
+- Verify OTP to complete registration
+
+**Login:**
+- Navigate to `/login`
+- Enter registered email and password
+- You'll receive a JWT token stored in cookies
+
+### 2. Main Chat Interface
+
+**Basic Chat:**
+- Type messages in the input field at the bottom
+- Press Enter or click Send to get AI responses
+- Chat history is saved and can be viewed later
+- User can enter youtube url in chat for video summary.
+
+**Chat Features:**
+- Click the microphone icon for voice input
+- Click the paperclip icon to attach files
+- Click the image icon to upload images
+
+### 3. Document Processing
+
+**Supported File Types:**
+- PDF (.pdf)
+- Word (.doc, .docx)
+- Excel (.xls, .xlsx)
+- Text (.txt)
+
+**How to Use:**
+1. Click the paperclip icon in the chat
+2. Select a file to upload
+3. The system will process and extract text
+4. Ask questions about the document content
+
+### 4. Image Analysis
+
+**How to Use:**
+1. Click the image icon in the chat
+2. Upload an image file
+3. The AI will describe the image content
+4. You can ask follow-up questions about the image
+
+### 5. Voice Interactions
+
+**Speech-to-Text:**
+1. Click the microphone icon
+2. Allow microphone access
+3. Speak your message
+4. The system will transcribe and process it
+
+**Text-to-Speech:**
+1. Enable "Voice Responses" in settings
+2. AI responses will be read aloud automatically
+
+### 6. Data Visualization
+
+**How to Use:**
+1. Provide structured data in your query (e.g., "Show sales data for Q1-Q3")
+2. The AI will generate both text explanation and visualization
+3. Visualizations appear as images in the chat
+
+Example queries:
+- "Show a bar chart of sales by region"
+- "Visualize quarterly revenue growth as a line chart"
+- "Create a pie chart of market share"
+
+### 7. Multi-language Support
+
+**Supported Languages:**
+- English (default)
+- Hindi
+- Marathi
+
+**How to Change:**
+1. Go to User Profile (top-right corner)
+2. Select your preferred language
+3. The AI will respond in the selected language
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/v1/otp/request` | POST | Request OTP for registration |
+| `/api/v1/otp/verify` | POST | Verify OTP |
+| `/api/v1/user/auth/login` | POST | User login |
+| `/api/v1/user/auth/register` | POST | User registration |
+| `/api/v1/user/auth/profile` | GET | Get user profile |
+| `/api/v1/user/auth/update` | PUT | Update user profile |
+| `/api/v1/user/auth/delete-account` | DELETE | Delete user account |
+| `/chats` | GET | Get all chat sessions |
+| `/chat/{chat_id}` | GET | Get specific chat history |
+| `/chat` | POST | Send text message |
+| `/chat_doc` | POST | Chat with document context |
+| `/handle_image` | POST | Process and analyze images |
+| `/transcribe_audio` | POST | Transcribe audio files |
+| `/delete_chat` | DELETE | Delete a chat session |
+| `/upload_doc` | POST | Upload documents |
+| `/fetch_all_documents` | GET | Get all user documents |
+| `/delete_document` | DELETE | Delete a document |
+| `/voice` | POST | Voice-based interactions |
+| `/audio` | POST | Audio file processing |
+
+## Installation
+
+"pip install fastapi uvicorn python-dotenv pymongo bcrypt python-jose[cryptography] python-multipart requests pypdfium2 docx2txt pandas olefile msoffcrypto python-pptx Pillow plotly seaborn matplotlib openai python-docx youtube-transcript-api pydantic chromadb langchain python-dotenv wave SpeechRecognition elevenlabs robotexclusionrulesparser"
+
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For support or questions, please contact mokshadsankhe@gmail.com.
+
+---
