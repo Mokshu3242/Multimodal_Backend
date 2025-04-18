@@ -866,6 +866,8 @@ async def login_user(user: UserLogin):
         key="authToken",
         value=token,
         path="/",
+        samesite=None,
+        secure=True
     )
     return response
 
@@ -2205,8 +2207,8 @@ async def handle_audio(
 
 
 # ------------------------------------------------------------------
-# if __name__ == "__main__":
-#   uvicorn.run(app, host="0.0.0.0", port=8000)
+#if __name__ == "__main__":
+#    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 # uvicorn fast_api:app --host 0.0.0.0 --port 8000 --reload
 
