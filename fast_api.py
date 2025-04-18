@@ -867,7 +867,9 @@ async def login_user(user: UserLogin):
         value=token,
         path="/",
         samesite=None,
-        secure=True
+        secure=True,
+        httponly=True
+
     )
     return response
 
