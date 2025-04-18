@@ -81,23 +81,33 @@ EMAIL_PASSWORD= "your_password" #App Password
 
 ### 4. Working
 
-Login and Signup:
-<img src="Images/Login_Signup.webp" alt="Logo" width="200">
-
-Chat with Documents:  
-<img src="Images/Chat_Document.webp" alt="Chat with Documents" width="200">  
-
-AI Image Processing:  
-<img src="Images/mage_processing.webp" alt="AI Image Processing" width="200">  
-
-Login & Signup:  
-<img src="Images/Login_Signup.webp" alt="Login and Signup" width="200">  
-
-Speech Interaction:  
-<img src="Images/speech_interaction.webp" alt="Speech Interaction" width="200">  
-
-Data Visualization:  
-<img src="Images/Visualization.webp" alt="Data Visualization" width="200">  
-
-YouTube Integration:  
-<img src="Images/Youtube.webp" alt="YouTube Integration" width="200">  
+<table>
+  <tr>
+    <td align="center">
+      <b>Login and Signup</b><br>
+      <img src="Images/Login_Signup.webp" alt="Login and Signup" width="200">
+    </td>
+    <td align="center">
+      <b>Chat with Documents</b><br>
+      <img src="Images/Chat_Document.webp" alt="Chat with Documents" width="200">
+    </td>
+    <td align="center">
+      <b>AI Image Processing</b><br>
+      <img src="Images/image_processing.webp" alt="AI Image Processing" width="200">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Speech Interaction</b><br>
+      <img src="Images/speech_interaction.webp" alt="Speech Interaction" width="200">
+    </td>
+    <td align="center">
+      <b>Data Visualization</b><br>
+      <img src="Images/visualization.webp" alt="Data Visualization" width="200">
+    </td>
+    <td align="center">
+      <b>YouTube Integration</b><br>
+      <img src="Images/Youtube.webp" alt="YouTube Integration" width="200">
+    </td>
+  </tr>
+</table>
