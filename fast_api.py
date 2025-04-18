@@ -109,13 +109,7 @@ app = FastAPI()
 
 # Configures CORS (Cross-Origin Resource Sharing) for the FastAPI app
 origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://192.168.0.145:5173",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "http://192.168.0.212:5173",
-    "http://192.168.0.235",
+    os.getenv("FRONTEND_URL")
 ]
 
 app.add_middleware(
@@ -2211,8 +2205,8 @@ async def handle_audio(
 
 
 # ------------------------------------------------------------------
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#   uvicorn.run(app, host="0.0.0.0", port=8000)
 
 # uvicorn fast_api:app --host 0.0.0.0 --port 8000 --reload
 
