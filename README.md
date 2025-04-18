@@ -79,3 +79,8 @@ EMAIL_ADDRESS= "your@email.com"
 EMAIL_PASSWORD= "your_password" #App Password
 ```
 
+### 4. Working
+
+Working of Login and Signup:
+![Login_Signup](Images/Login_Signup.webp)
+
