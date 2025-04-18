@@ -1,6 +1,3 @@
-Here's a comprehensive **README.md** for your GitHub repository, covering all functionalities of your **MultiGPT AI Agent** project:
-
-```markdown
 # MultiGPT - AI Agent with Multi-Modal Capabilities 🚀
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
@@ -10,147 +7,68 @@ Here's a comprehensive **README.md** for your GitHub repository, covering all fu
 
 An advanced AI agent capable of processing **text, audio, images, and documents** with visualization support. Built with FastAPI, Cloudflare AI, ElevenLabs, and LangChain.
 
+---
+
 ## 🌟 Key Features
 
 ### 1. **Multi-Modal Processing**
-| Feature          | Endpoint          | Description                                                                 |
-|------------------|-------------------|-----------------------------------------------------------------------------|
-| **Text Chat**    | `/chat`           | Conversational AI with persistent chat history                              |
-| **Voice Chat**   | `/voice`          | Speak to your agent and get voice responses (ElevenLabs TTS)                |
-| **Audio Input**  | `/audio`          | Upload audio files for transcription (Whisper)                              |
-| **Image Input**  | `/handle_image`   | Analyze images with CLIP-based models                                       |
-| **Documents**    | `/upload_doc`     | Process PDFs, Word, Excel files with text extraction                        |
+
+| Feature         | Endpoint         | Description                                                  |
+|-----------------|------------------|--------------------------------------------------------------|
+| **Text Chat**   | `/chat`          | Conversational AI with persistent chat history               |
+| **Voice Chat**  | `/voice`         | Speak to your agent and get voice responses (ElevenLabs TTS) |
+| **Audio Input** | `/audio`         | Upload audio files for transcription (Whisper)               |
+| **Image Input** | `/handle_image`  | Analyze images with CLIP-based models                        |
+| **Documents**   | `/upload_doc`    | Process PDFs, Word, Excel files with text extraction         |
 
 ### 2. **Advanced Capabilities**
-| Feature                     | Details                                                                 |
-|-----------------------------|-------------------------------------------------------------------------|
-| **YouTube Transcripts**     | Extract and summarize video transcripts                                 |
-| **Data Visualization**      | Generate charts (bar, line, pie) from structured data                  |
-| **Password-Protected Docs** | Decrypt and read protected Word/PDF files                              |
-| **Multi-Language Support**  | English, Hindi, Marathi responses                                      |
+
+| Feature                     | Details                                           |
+|-----------------------------|---------------------------------------------------|
+| **YouTube Transcripts**     | Extract and summarize video transcripts           |
+| **Data Visualization**      | Generate charts (bar, line, pie) from data        |
+| **Password-Protected Docs** | Decrypt and read protected Word/PDF files         |
+| **Multi-Language Support**  | English, Hindi, Marathi responses                 |
 
 ### 3. **User Management**
-| Feature               | Endpoint                  | Description                                     |
-|-----------------------|---------------------------|-------------------------------------------------|
-| OTP Verification      | `/api/v1/otp/request`     | Secure email-based authentication              |
-| JWT Authentication    | `/api/v1/user/auth/login` | Token-based user sessions                      |
-| Profile Management    | `/api/v1/user/auth/profile` | Update name, email, profile picture          |
+
+| Feature             | Endpoint                    | Description                         |
+|---------------------|-----------------------------|-------------------------------------|
+| OTP Verification    | `/api/v1/otp/request`       | Secure email-based authentication   |
+| JWT Authentication  | `/api/v1/user/auth/login`   | Token-based user sessions           |
+| Profile Management  | `/api/v1/user/auth/profile` | Update name, email, profile picture |
 
 ### 4. **Database & Storage**
-- **MongoDB**: Stores chat history, user data, and document chunks
+- **MongoDB**: Stores chat history, user data, and document chunks  
 - **File System**: Temporarily stores uploaded documents (auto-expires in 2 days)
 
+---
+
 ## 🛠️ Tech Stack
+
 - **Backend**: FastAPI (Python)  
-- **AI Models**:  
-  - Cloudflare AI (LLM, Whisper, CLIP)  
-  - ElevenLabs (Text-to-Speech)  
-- **Data Processing**:  
-  - LangChain (Document chunking)  
-  - PyPDFium2, docx2txt (File extraction)  
-- **Database**: MongoDB (Atlas or self-hosted)  
-- **Auth**: JWT + OTP via SMTP  
+- **AI Models**:
+  - Cloudflare AI (LLM, Whisper, CLIP)
+  - ElevenLabs (Text-to-Speech)
+- **Data Processing**:
+  - LangChain (Document chunking)
+  - PyPDFium2, docx2txt (File extraction)
+- **Database**: MongoDB (Atlas or self-hosted)
+- **Auth**: JWT + OTP via SMTP
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.9+
 - MongoDB instance
 - Cloudflare & ElevenLabs API keys
 
 ### Installation
+
 ```bash
 git clone https://github.com/yourusername/multigpt.git
 cd multigpt
 pip install -r requirements.txt
-```
-
-### Configuration
-1. Create `.env` file:
-```ini
-MONGO_DB_CONNECT="mongodb://localhost:27017"
-CLOUDFLARE_ACCOUNT_ID="your_account_id"
-CLOUDFLARE_AUTH_TOKEN="your_api_token"
-ELEVENLABS_API_KEY="your_elevenlabs_key"
-JWT_SECRET="your_jwt_secret"
-```
-
-2. Update `config.yaml` with model IDs:
-```yaml
-llm_model: "@cf/meta/llama-2-7b-chat-int8"
-Image_model: "@cf/unum/uform-gen2-qwen-500m"
-whisper_model: "@cf/openai/whisper"
-```
-
-### Running the Server
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-Access docs: http://localhost:8000/docs
-
-## 📂 Project Structure
-```
-.
-├── main.py                 # FastAPI app entrypoint
-├── config.yaml             # Model configurations
-├── requirements.txt        # Dependencies
-├── uploaded_files/         # User document storage
-│
-├── utils/
-│   ├── file_processor.py   # PDF/Word/Excel extraction
-│   ├── visualization.py    # Chart generation
-│   └── auth.py            # JWT/OTP handlers
-│
-└── tests/                  # API test cases
-```
-
-## 📜 API Documentation
-Full Swagger docs available at `/docs` endpoint:
-![Swagger Demo](docs/swagger_screenshot.png)
-
-## 🌐 Deployment
-### Option 1: Azure Container Apps
-```bash
-az containerapp up \
-  --name multigpt \
-  --resource-group your_rg \
-  --environment your_env \
-  --source .
-```
-
-### Option 2: Docker
-```dockerfile
-FROM python:3.9-slim
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-## 📊 Future Roadmap
-- [ ] Add Microsoft Copilot Studio integration
-- [ ] Support real-time websocket chat
-- [ ] Implement Azure AI Search for documents
-
-## 🤝 Contributing
-PRs welcome! Please follow:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/foo`)
-3. Commit changes (`git commit -am 'Add foo'`)
-4. Push to branch (`git push origin feature/foo`)
-5. Open a Pull Request
-
-## 📄 License
-MIT © 2025 [Your Name]
-
-```
-
----
-
-### Key Additions:
-1. **Feature Matrix** - Clearly lists all 20+ functionalities  
-2. **Visual Hierarchy** - Icons + tables for better readability  
-3. **Deployment Guides** - Ready-to-run Docker/Azure commands  
-4. **Future Roadmap** - Shows project evolution potential  
-
-Would you like me to generate the `requirements.txt` or any other supporting files?
