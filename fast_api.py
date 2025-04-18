@@ -109,7 +109,8 @@ app = FastAPI()
 
 # Configures CORS (Cross-Origin Resource Sharing) for the FastAPI app
 origins = [
-    os.getenv("FRONTEND_URL")
+    os.getenv("FRONTEND_URL"),
+    "http://192.168.0.145:5173"
 ]
 
 app.add_middleware(
