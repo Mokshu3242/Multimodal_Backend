@@ -56,6 +56,7 @@ source venv/bin/activate  # Linux/Mac
 # venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 ```
+Also add frontend URL in the CORS
 
 ### 2. Running
 ```bash
