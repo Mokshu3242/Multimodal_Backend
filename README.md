@@ -31,6 +31,7 @@ An advanced AI agent capable of processing **text, audio, images, and documents*
 - **Auto-expiring file storage** (2-day TTL)
 
 ## 🛠️ Tech Stack
+- **Frontend**: React JS
 - **Backend**: FastAPI
 - **AI Services**: 
   - Cloudflare (LLaMA-2, Whisper, CLIP)
