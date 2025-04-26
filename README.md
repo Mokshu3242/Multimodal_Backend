@@ -79,6 +79,7 @@ SMTP_SERVER= "smtp.gmail.com"
 SMTP_PORT= 587
 EMAIL_ADDRESS= "your@email.com"
 EMAIL_PASSWORD= "your_password" #App Password
+FRONTEND_URL="frontend url"
 ```
 
 ### 4. Working
