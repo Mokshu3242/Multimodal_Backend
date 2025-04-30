@@ -59,21 +59,106 @@ pip install -r requirements.txt
 ```
 Also add frontend URL in the CORS
 
-### 2. Create .env file:
+### 2. Environment Variables Setup
 
-```bash
-MONGO_DB_CONNECT= "mongodb://localhost:27017"
-CLOUDFLARE_ACCOUNT_ID= "your_account_id"
-CLOUDFLARE_AUTH_TOKEN= "your_api_token"
-ELEVENLABS_API_KEY= "your_elevenlabs_key"
-ELEVEN_VOICE_ID= "Voice_ID"
-JWT_SECRET= "your_jwt_secret"
-SMTP_SERVER= "smtp.gmail.com"
-SMTP_PORT= 587
-EMAIL_ADDRESS= "your@email.com"
-EMAIL_PASSWORD= "your_password" #App Password
-FRONTEND_URL="frontend url"
-```
+To run **MultiGPT** successfully, you need to create a `.env` file in your backend root directory with the following environment variables. Below are detailed steps to acquire each one:
+
+---
+
+### 🔹 MONGO_DB_CONNECT  
+MongoDB connection URI
+
+🖥️ Local MongoDB:
+- Install MongoDB: https://www.mongodb.com/try/download/community
+- Start MongoDB service (`mongod`)
+- Use this:
+  MONGO_DB_CONNECT="mongodb://localhost:27017"
+
+☁️ MongoDB Atlas:
+- Sign up at https://cloud.mongodb.com
+- Create a cluster → Click "Connect" → "Connect your application"
+- Copy and paste the provided connection URI (replace <username> and <password>)
+
+---
+
+### 🔹 CLOUDFLARE_ACCOUNT_ID & CLOUDFLARE_AUTH_TOKEN  
+Required for Cloudflare AI APIs
+
+- Visit https://dash.cloudflare.com
+- Select your domain → Overview → Copy Account ID
+- Go to My Profile → API Tokens
+- Click Create Token
+- Use the "Edit zone DNS" template or create a custom token with needed scopes
+- Copy the generated token as CLOUDFLARE_AUTH_TOKEN
+
+---
+
+### 🔹 ELEVENLABS_API_KEY & ELEVEN_VOICE_ID  
+Used for Text-to-Speech via ElevenLabs
+
+- Go to https://www.elevenlabs.io
+- Sign in → Go to Profile → API Key
+- Click Generate API Key → Copy and paste it as ELEVENLABS_API_KEY
+- Navigate to Voice Lab → Select or create a voice
+- Copy the Voice ID from the voice details panel
+
+---
+
+### 🔹 JWT_SECRET  
+Used to securely sign JWT tokens
+
+Generate a secure key using Python:
+
+    import secrets
+    print(secrets.token_hex(32))
+
+Copy the generated value into .env:
+    JWT_SECRET="your_generated_secret"
+
+---
+
+### 🔹 SMTP_SERVER, SMTP_PORT, EMAIL_ADDRESS, EMAIL_PASSWORD  
+Used for sending emails (e.g., OTP verification)
+
+✉️ Gmail SMTP Setup:
+    SMTP_SERVER="smtp.gmail.com"
+    SMTP_PORT=587
+    EMAIL_ADDRESS="your@gmail.com"
+
+🔐 Get Gmail App Password:
+- Go to Google Account Security
+- Enable 2-Step Verification
+- Go to App Passwords → Select app: Mail, device: Other
+- Generate → Copy the password → Add it to .env as:
+
+    EMAIL_PASSWORD="your_app_password"
+
+---
+
+### 🔹 FRONTEND_URL  
+CORS configuration for your React frontend
+
+🧪 For local testing:
+    FRONTEND_URL="http://localhost:3000"
+
+🌐 For production:
+    FRONTEND_URL="https://your-frontend-domain.com"
+
+---
+
+### 📄 Example .env File
+
+    MONGO_DB_CONNECT="mongodb://localhost:27017"
+    CLOUDFLARE_ACCOUNT_ID="your_account_id"
+    CLOUDFLARE_AUTH_TOKEN="your_api_token"
+    ELEVENLABS_API_KEY="your_elevenlabs_key"
+    ELEVEN_VOICE_ID="Voice_ID"
+    JWT_SECRET="your_jwt_secret"
+    SMTP_SERVER="smtp.gmail.com"
+    SMTP_PORT=587
+    EMAIL_ADDRESS="your@email.com"
+    EMAIL_PASSWORD="your_app_password"
+    FRONTEND_URL="http://localhost:3000"
 
 ### 3. Running
 ```bash
