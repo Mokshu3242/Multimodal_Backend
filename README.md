@@ -78,7 +78,7 @@ MongoDB connection URI
 
 ☁️ MongoDB Atlas:
 - Sign up at https://cloud.mongodb.com
-- Create a cluster → Click "Connect" → "Connect your application"
+- Create a new project → Create a cluster → Click "Connect" → "Connect your application"
 - Copy and paste the provided connection URI (replace <username> and <password>)
 
 ### 🔹 CLOUDFLARE_ACCOUNT_ID & CLOUDFLARE_AUTH_TOKEN  
