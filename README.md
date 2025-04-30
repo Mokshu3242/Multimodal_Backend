@@ -48,6 +48,8 @@ An advanced AI agent capable of processing **text, audio, images, and documents*
 - MongoDB
 - Cloudflare & ElevenLabs accounts
 
+---
+
 ### 1. Clone & Setup
 ```bash
 git clone https://github.com/yourusername/multigpt.git
@@ -59,11 +61,11 @@ pip install -r requirements.txt
 ```
 Also add frontend URL in the CORS
 
+---
+
 ### 2. Environment Variables Setup
 
 To run **MultiGPT** successfully, you need to create a `.env` file in your backend root directory with the following environment variables. Below are detailed steps to acquire each one:
-
----
 
 ### 🔹 MONGO_DB_CONNECT  
 MongoDB connection URI
@@ -79,8 +81,6 @@ MongoDB connection URI
 - Create a cluster → Click "Connect" → "Connect your application"
 - Copy and paste the provided connection URI (replace <username> and <password>)
 
----
-
 ### 🔹 CLOUDFLARE_ACCOUNT_ID & CLOUDFLARE_AUTH_TOKEN  
 Required for Cloudflare AI APIs
 
@@ -91,8 +91,6 @@ Required for Cloudflare AI APIs
 - Use the "Edit zone DNS" template or create a custom token with needed scopes
 - Copy the generated token as CLOUDFLARE_AUTH_TOKEN
 
----
-
 ### 🔹 ELEVENLABS_API_KEY & ELEVEN_VOICE_ID  
 Used for Text-to-Speech via ElevenLabs
 
@@ -101,8 +99,6 @@ Used for Text-to-Speech via ElevenLabs
 - Click Generate API Key → Copy and paste it as ELEVENLABS_API_KEY
 - Navigate to Voice Lab → Select or create a voice
 - Copy the Voice ID from the voice details panel
-
----
 
 ### 🔹 JWT_SECRET  
 Used to securely sign JWT tokens
@@ -114,8 +110,6 @@ Generate a secure key using Python:
 
 Copy the generated value into .env:
     JWT_SECRET="your_generated_secret"
-
----
 
 ### 🔹 SMTP_SERVER, SMTP_PORT, EMAIL_ADDRESS, EMAIL_PASSWORD  
 Used for sending emails (e.g., OTP verification)
@@ -133,8 +127,6 @@ Used for sending emails (e.g., OTP verification)
 
     EMAIL_PASSWORD="your_app_password"
 
----
-
 ### 🔹 FRONTEND_URL  
 CORS configuration for your React frontend
 
@@ -143,8 +135,6 @@ CORS configuration for your React frontend
 
 🌐 For production:
     FRONTEND_URL="https://your-frontend-domain.com"
-
----
 
 ### 📄 Example .env File
 
@@ -160,12 +150,16 @@ CORS configuration for your React frontend
     EMAIL_PASSWORD="your_app_password"
     FRONTEND_URL="http://localhost:3000"
 
+---
+
 ### 3. Running
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 Access docs: http://localhost:8000/docs
 ```
+
+---
 
 ### 4. Working
 
