@@ -59,14 +59,7 @@ pip install -r requirements.txt
 ```
 Also add frontend URL in the CORS
 
-### 2. Running
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-
-Access docs: http://localhost:8000/docs
-```
-
-### 3. Create .env file:
+### 2. Create .env file:
 
 ```bash
 MONGO_DB_CONNECT= "mongodb://localhost:27017"
@@ -80,6 +73,13 @@ SMTP_PORT= 587
 EMAIL_ADDRESS= "your@email.com"
 EMAIL_PASSWORD= "your_password" #App Password
 FRONTEND_URL="frontend url"
+```
+
+### 3. Running
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+Access docs: http://localhost:8000/docs
 ```
 
 ### 4. Working
