@@ -51,7 +51,7 @@ An advanced AI agent capable of processing **text, audio, images, and documents*
 ### 1. Clone & Setup
 ```bash
 git clone https://github.com/yourusername/multigpt.git
-cd multigpt
+cd Multimodal_Backend
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 # venv\Scripts\activate   # Windows
