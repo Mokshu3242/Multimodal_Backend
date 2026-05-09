@@ -7,6 +7,8 @@
 
 An advanced AI agent capable of processing **text, audio, images, and documents** with visualization support. Built with FastAPI, Cloudflare AI, ElevenLabs, and LangChain.
 
+Video Demo: https://www.youtube.com/watch?v=XLyAPlee8Og
+
 ## 🌟 Features
 
 ### 1. **Core Capabilities**
